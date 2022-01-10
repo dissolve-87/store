@@ -40,7 +40,7 @@ impl Database {
             let mut collect = line.splitn(2,'\t');
             let key = collect.next().expect("No key found");
             let val = collect.next().expect("No value found");
-            dict.insert(key, val);
+            dict.insert(key.to_owned(), val.to_owned());
         }
 
         Ok(
